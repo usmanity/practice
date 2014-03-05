@@ -2,19 +2,45 @@
 
 #main {
   text-align: center;
-  padding: 10%;
   font-family: sans-serif;
+  width: 300px;
+  margin: auto;
   color: #999;
+  padding-top: 120px;
 }
 
 input {
+  font-family: sans-serif;
   border: 1px solid #888;
   padding: 15px;
   font-size: 24px;
+  border-width: 0 0 1px 0;
 }
 label {
-  display: none;
+  font-family: sans-serif;
+  position: relative;
+  left: -74px;
+  top: -45px;
+  font-size: 24px;
 }
 input:focus + label {
-  // do something with label
+  display: block;
+  -webkit-animation: moveLabel 0.3s linear;
+  top: -65px;
+  left: -103px;
+  font-size: 12px;
+  color: #0376FF;
+}
+input:focus {
+  outline-width: 0;
+}
+@-webkit-keyframes moveLabel {
+  0% { 
+    top: -50px;
+    opacity: 0;
+  }
+  100% {
+    top: -65px;
+    color: #0376FF;
+  }
 }
