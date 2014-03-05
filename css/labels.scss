@@ -1,0 +1,20 @@
+// for floating labels
+
+#main {
+  text-align: center;
+  padding: 10%;
+  font-family: sans-serif;
+  color: #999;
+}
+
+input {
+  border: 1px solid #888;
+  padding: 15px;
+  font-size: 24px;
+}
+label {
+  display: none;
+}
+input:focus + label {
+  // do something with label
+}
