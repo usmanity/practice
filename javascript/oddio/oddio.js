@@ -10,10 +10,16 @@ var playAudio = function() {
 var skipSong = function(){
   var player = document.getElementById("player");
   player.src = songs[0];
-  if (songs.length > 1 ) songs = songs.pop();
+  if (songs.length > 1 ) {
+    songs = songs.splice(1, 1, songs[0])
+  } else {
+    songs = [];
+    console.log("done playing songs...")
+  }
   console.log(songs);
   player.play();
 };
+
 var songs = [
   "http://mhmd.us/Kv2H+",
   "http://mhmd.us/IC8+"
