@@ -4,6 +4,9 @@ var currentFile = "";
 var playAudio = function() {
   if (window.HTMLAudioElement) {
     var audio = document.getElementById("player");
+    var playButton = document.getElementById("play");
+    playButton.classList.remove("ion-play");
+    playButton.classList.add("ion-pause");
     audio.play();
   }
 }
