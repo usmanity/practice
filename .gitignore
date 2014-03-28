@@ -17,3 +17,4 @@ tmp
 _yardoc
 doc/
 .sass-cache/
+.DS_Store
