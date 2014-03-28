@@ -1,0 +1,75 @@
+body {
+  color: #222222;
+  background-color: #f9f9f9;
+}
+*:focus {
+  outline: none;
+}
+.hidden {
+  display: none;
+}
+
+#note-body, #note-title {
+  width: 940px;
+  margin: auto;
+}
+#note-title {
+  height: 50px;
+  margin-top: 80px;
+  border-bottom: 1px solid #ccc;
+  font-size: 40px;
+}
+#note-body {
+  font-size: 20px;
+  margin-top: 15px;
+  min-height: 300px;
+}
+#menu-icon {
+  font-family: sans-serif;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  border: 1px solid #222;
+  padding: 4px 8px;
+  border-radius: 1px;
+}
+#menu-icon:hover {
+  cursor: pointer;
+}
+#drawer {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #ccc;
+  background-color: #e3d3e3;
+  border-width: 0 1px 0 0;
+  box-shadow: 1px 1px 10px #ccc;
+  -webkit-animation: open-drawer 0.3s linear;
+}
+@-webkit-keyframes open-drawer {
+  0%   { 
+    opacity: 0;
+    width: 0;
+    color: transparent;
+  }
+  99% {
+    color: transparent;
+  }
+  100% { 
+    opacity: 1;
+    width: 300px;
+  }
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+#notes li {
+  list-style: none;
+  padding: 10px 2px 5px;
+  margin-left: 10px;
+  font-family: sans-serif;
+  font-size: 20px;
+}
