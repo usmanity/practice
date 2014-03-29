@@ -2,7 +2,7 @@ var notesApp = {
   init: function(){
     var appName = "notesApp";
     if(localStorage.appName == appName) {
-      var notes = notesApp.getNotes();      
+      var notes = notesApp.getNotes();
       notesApp.noteID = notesApp.incrementID(notesApp.findTotalNotes(notes))
     } else {
       localStorage.setItem("appName", appName);
@@ -25,7 +25,7 @@ var notesApp = {
   },
   addToStorage: function(noteTitle, noteBody, noteID) {
     var notes = notesApp.getNotes();
-    notes[noteID] = { 
+    notes[noteID] = {
       title: noteTitle,
       body:  noteBody
     }
@@ -58,7 +58,6 @@ var menu = {
     if (drawer.hasClass("hidden")){
       menu.draw();
       drawer.removeClass("hidden");
-
     } else {
       drawer.addClass("hidden");
     }
@@ -81,7 +80,7 @@ $(document).keypress(function(e){
   }
 });
 
-$("#menu-icon").on("click", function(){
+$(".menu-button").on("click", function(){
   menu.toggleDrawer();
 });
 
