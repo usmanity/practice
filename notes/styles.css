@@ -24,7 +24,7 @@ body {
   margin-top: 15px;
   min-height: 300px;
 }
-#menu-icon {
+.menu-button {
   font-family: sans-serif;
   position: absolute;
   bottom: 20px;
@@ -33,7 +33,7 @@ body {
   padding: 4px 8px;
   border-radius: 1px;
 }
-#menu-icon:hover {
+.menu-button:hover {
   cursor: pointer;
 }
 #drawer {
@@ -49,7 +49,7 @@ body {
   -webkit-animation: open-drawer 0.3s linear;
 }
 @-webkit-keyframes open-drawer {
-  0%   { 
+  0%   {
     opacity: 0;
     width: 0;
     color: transparent;
@@ -57,7 +57,7 @@ body {
   99% {
     color: transparent;
   }
-  100% { 
+  100% {
     opacity: 1;
     width: 300px;
   }
