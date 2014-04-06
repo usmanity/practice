@@ -1,0 +1,30 @@
+body {
+  background-color: black;
+  -webkit-animation: load 1s;
+  -moz-animation: load 1s;
+  animation: load 1s;
+}
+#cover {
+ position: fixed;
+ right: 0;
+ bottom: 0;
+ min-width: 100%;
+ min-height: 100%;
+ width: auto;
+ height: auto;
+ z-index: -100;
+ background-size: cover; 
+}
+
+@-webkit-keyframes load {
+  0%   { opacity: 0;}
+  100% { opacity: 1;}
+}
+@-moz-keyframes load {
+  0%   { opacity: 0;}
+  100% { opacity: 1;}
+}
+@keyframes load {
+  0%   { opacity: 0;}
+  100% { opacity: 1;}
+}
