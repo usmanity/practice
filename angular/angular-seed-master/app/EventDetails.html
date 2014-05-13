@@ -1,0 +1,33 @@
+<html ng-app="eventsApp">
+    <head>
+        <title>Event Details</title>
+    </head>
+    <body ng-cloak>
+        <div ng-controller="EventController">
+            <img ng-src="http://placehold.it/20x20" alt="" />
+            <h2 ng-bind="event.name"></h2>
+            {{ event.date }}<br>
+            <div>
+                {{ event.location.address }}
+                {{ event.location.city }}
+            </div>
+            <h3>Sessions</h3>
+            Order By:
+            <select ng-model="sortorder">
+                <option value="name">name</option>
+                <option value="upvoteCount">Up Vote Count</option>
+            </select>
+            <button ng-model="changeOrder"></button>
+            <ul class="sessions">
+                <li ng-repeat="session in event.sessions | orderBy:sortorder ">
+                    {{ session.name }} -> upvotes: {{ session.upvoteCount }} <a href="#" ng-click="upVoteSession(session)"> Upvote</a>
+                </li>
+
+            </ul>
+        </div>
+
+        <script type="text/javascript" charset="utf-8" src="/lib/angular/angular.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/js/app.js"></script>
+        <script src="js/controllers/EventController.js"></script>
+    </body>
+</html>

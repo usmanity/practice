@@ -1,0 +1,30 @@
+<html ng-app="eventsApp">
+    <head>
+        <title>Event Details</title>
+    </head>
+    <body ng-cloak>
+        <div ng-controller="EditEventController">
+            <h1>New Event</h1>
+            <hr>
+            <form>
+            <fieldset>
+                <label for="eventName">Event Name:</label>
+                <input type="text" name="eventName" value="" ng-model="event.name">
+                <label for="image">Image url:</label>
+                <input type="url" name="image" value="" id="eventImageUrl" ng-model="imageUrl">
+                {{event.name}}
+                <img ng-src="{{event.imageUrl}}" alt="" width="400" height="auto"/>
+            </fieldset>
+            <button name="button" ng-click="saveEvent(event)">Save</button>
+            </form>
+
+        </div>
+
+
+
+        <script type="text/javascript" charset="utf-8" src="/lib/angular/angular.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/js/app.js"></script>
+        <script src="js/controllers/EventController.js"></script>
+        <script src="js/controllers/EditEventController.js"></script>
+    </body>
+</html>
