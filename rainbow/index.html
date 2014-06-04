@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>rainbow test</title>
+    <link rel="stylesheet" href="/rainbow/themes/github.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+
+<pre>
+  <code data-language="python">
+  # python
+  def openFile(path):
+    file = open(path, "r")
+    content = file.read()
+    file.close()
+    return content
+  </code>
+</pre>
+
+<pre>
+  <code data-language="javascript">
+    // javascript
+    var log = function(message){
+      console.log(message);
+    }
+    var randomNumber = function(){
+      return Math.random();
+    }
+  </code>
+</pre>
+
+<pre>
+  <code data-language="ruby">
+    # ruby
+    def fact(n)
+      if n == 0
+        1
+      else
+        n * fact(n-1)
+      end
+    end
+
+  puts fact(ARGV[0].to_i)
+  </code>
+</pre>
+
+    <script src="/rainbow/rainbow.min.js"></script>
+    <script src="/rainbow/language/python.js"></script>
+    <script src="/rainbow/language/javascript.js"></script>
+    <script src="/rainbow/language/ruby.js"></script>
+  </body>
+</html>
