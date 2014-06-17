@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>counting up</title>
+    <style media="screen">
+      body {
+        font-size: 30px;
+        font-family: avenir, sans-serif;
+        padding: 30px;
+        text-align: center;
+
+      }
+    </style>
+  </head>
+  <body>
+
+    <span class="timer" data-to="24961" data-from="0" data-speed="1500"></span>
+
+    <script charset="utf-8" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script charset="utf-8" src="countTo.js"></script>
+    <script charset="utf-8">
+      $(".timer").countTo();
+    </script>
+  </body>
+</html>
