@@ -1,0 +1,35 @@
+<html ng-app="eventsApp">
+  <head>
+    <title>Index</title>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <div class="container">
+      <div ng-controller="EventController">
+        <div>
+          {{ 3.123125412 | number:2 }}
+        </div>
+        <img ng-src="http://mhmd.us/EplP+" alt="random photo" width="200" />
+        <h1 ng-bind-template="{{ event.name }} {{ event.date}}"></h1>
+        Date: <strong>{{ event.date }}</strong><br>
+        Time: <strong>{{ event.time }}</strong>
+        
+        <ul>
+          <li ng-repeat="session in event.sessions">
+            <div class="col-md-3">
+              <i class="icon-chevnron-up" ng-click="upvoteSession(session)"> upvote </i>
+              {{ session.upvoteCount }}
+              <i class="icon-chevron-down" ng-click="downvoteSession(session)"> downvote </i>
+            </div>
+            <div class="col-md-4">{{ session.name }}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <script charset="utf-8" src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script charset="utf-8" src="/bower_components/angularjs/angular.min.js"></script>
+  <script charset="utf-8" src="/app/js/app.js"></script>
+  <script charset="utf-8" src="/app/js/controller/eventController.js"></script>
+  <script charset="utf-8" src="/app/js/services/eventData.js"></script>
+  </body>
+</html>
