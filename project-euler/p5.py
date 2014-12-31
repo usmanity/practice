@@ -1,3 +1,4 @@
+
 import math
 def is_prime(n):
     if n % 2 == 0 and n > 2: 
@@ -20,3 +21,7 @@ for n in prime_array:
       multipliers.append(num)
   
 print multipliers
+
+# things to do
+# 1. find out how to evenly divide a numer
+# 2. test with 10, 20, 30 starters
