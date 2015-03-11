@@ -29,7 +29,7 @@ def get_songs():
 print songs
 
 songs = get_songs()
-refresh_token = 'AQB0R6HeC87u99cttvDet8zhvmAHETkqQOhiqxNWhtP9U6Te2Q1XBI-5vGbf3lAjQShi7CDUtRStQjnJvmkdgf2mcNLpKYKa1u77cjR3eSNW8uoAtzbLBChH-q7-MUS8rkw>'
+refresh_token = ''
 
 base64_client = base64.b64encode('f7723c8b67714b9e86669cef4d88d2d8:d8c7352ff6fb416fb06e1cf597db43ea')
 
@@ -37,7 +37,7 @@ auth_header = {'Authorization': 'Basic %s' % base64_client }
 access_token = requests.post('https://accounts.spotify.com/api/token', data={'grant_type': 'refresh_token', 'refresh_token': refresh_token}, headers=auth_header)
 print access_token.content
 
-bearer_token = 'BQAI8D1NjyiLTwyIpU7s7LHiqTtQlbk2UvaAChGYk2oI4tp4PntOQ-KIxxU4nUV8a51TWwClcWiITHHjwGpsCyQM5dLua9jdO5joi-2FpcCMqiSGcvtxwA0SwlvDxpbeg7fQi3pXCTgrryRp3pOAteRIU5-AgVdiG7CFWCWSfMwI_bCpPvqEcnr1ioy3W81Gl2IWvvwXgy78Dtv7he_SW9ye162D'
+bearer_token = 'BQBKw75DjT9LOdcCyZcpxZYQy3gq8ihLrAopO0xnW4Oc9nMxuzSSho7A9iHsFPVwF3yyeGlvUt1dMBUxG2s3n0WL8eOOYTeJAFgDxosnEsmbB-XruTea-rK_dtbcw5FlArZnX9t8GKg0wsdyaAzO7gv4HznCO6ruA075vxUPS9eGEwz30n1HG0hH8A0iDUesOey6R6bWwXckVlWz55vYsA1w1BjM'
 
 # print songs[0]
 header = {'Accept': 'application/json', 'Authorization': 'Bearer %s' % bearer_token}
