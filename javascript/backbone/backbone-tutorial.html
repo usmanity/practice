@@ -32,7 +32,7 @@
     <script type="text/template" id="item-template">
       <div class="view">
         <input class="edit" value="<%- title %>">
-        <input type="checkbox" class="toggle">
+        <input type="checkbox" class="toggle" <%= completed ? 'checked' : '' %>>
         <label><%- title %></label>
         <button class="destroy">x</button>
       </div>
@@ -56,7 +56,7 @@
         completed: false
       },
       toggle: function() {
-        app.todoList.toggle(this.id);
+        this.save({ completed: !this.get('completed')});
       }
     });
 
@@ -69,14 +69,7 @@
         });
       },
       remaining: function() {
-        return this.filter(function(todo) {
-          return todo.without.apply(this, this.completed());
-        });
-      },
-      toggle: function(todo) {
-        var task = app.todoList.get(todo);
-        console.log(task.get('completed'));
-        task.set('completed', !task.attributes.completed);
+        return this.without.apply(this, this.completed());
       }
     });
     app.todoList = new app.TodoList();
@@ -147,7 +140,6 @@
       },
       addAll: function(){
         this.$('#todo-list').html(''); // clean the todo list
-        app.todoList.each(this.addOne, this);
         // filter based on params
         switch(window.filter) {
           case 'pending':
