@@ -19,3 +19,4 @@ _yardoc
 doc/
 .sass-cache/
 .DS_Store
+php/hello/vendor
