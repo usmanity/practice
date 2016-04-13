@@ -1,15 +1,14 @@
-// var path = new Path();
-// path.strokeColor = 'black';
-// var start = new Point(100, 100);
-// path.moveTo(start);
-// path.lineTo(start + [ 100, -50 ]);
-
-var path = new Path.Circle({
-  center: view.center,
-  radius: 30,
-  strokeColor: 'blue'
+$(document).ready(function(){
+  var canvas = $("#paper")[0];
+  paper.setup(canvas);
+  var path = paper.Path();
+  var tool = new paper.Tool();
+  tool.onMouseDown = function(event) {
+    path.strokeColor = 'blue';
+    path.add(event.point);
+    paper.view.draw();
+  }
+  tool.onMouseDrag  = function(event) {
+    path.add(event.point);
+  }
 });
-
-function onResize(event) {
-  // path.position = view.center;
-}
