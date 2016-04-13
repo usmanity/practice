@@ -19,3 +19,11 @@ $sciFi = 0.1234E4;
 
 var_dump($testFloat);
 var_dump($sciFi);
+
+// booleans
+
+$isTrue = true;
+$sentence = "Is this a string?";
+
+var_dump($isTrue);
+var_dump((bool)$sentence);
