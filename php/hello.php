@@ -1,4 +1,6 @@
 <?php
 
+$greeting = htmlspecialchars($_GET['greeting']);
+$name = htmlspecialchars($_GET['name']);
 
-echo "Hello, world!";
+require("hello.view.php");
