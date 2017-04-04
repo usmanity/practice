@@ -1,0 +1,3 @@
+This is just a text file where I type some stuff.
+Another line to add more details.
+And a third line.
