@@ -25,4 +25,4 @@ webpack/js/*
 */node_modules
 */yarn-error.log
 
-*/vendor
+*/*/vendor
