@@ -8,9 +8,9 @@ def palindrome(string):
     else:
         return True
 
-print(palindrome('racecar'))
-print(palindrome('daniel'))
-print(palindrome('noon'))
-print(palindrome('kayak'))
-print(palindrome('radar'))
-print(palindrome('muhammad'))
+words = ['racecar', 'noon', 'samson', 'kayak', 'bilo', 'heisenberg', 'radar']
+
+print('Checking some words...')
+
+for word in words:
+  print(word, palindrome(word))
