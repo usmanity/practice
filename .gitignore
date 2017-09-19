@@ -26,3 +26,5 @@ webpack/js/*
 */yarn-error.log
 
 */*/vendor
+
+*.pyc
