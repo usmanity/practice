@@ -24,7 +24,9 @@ php/hello/vendor
 webpack/js/*
 */node_modules
 */yarn-error.log
+node_modules
 
 */*/vendor
 
 *.pyc
+
