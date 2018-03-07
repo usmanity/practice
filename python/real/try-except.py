@@ -10,3 +10,5 @@ except ValueError:
     print('Please input a number.')
 except ZeroDivisionError:
     print('You can\'t divide using zero.')
+except:
+    pritn('Maybe there was a mistake')
