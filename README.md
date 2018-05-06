@@ -1,7 +1,8 @@
 practice
 ========
 
-this repo contains code i've written while practicing something new or just keeping track of some pieces of code
+This repo contains code related to:
 
-
-# example projects
+- Practicing a new concept or technology
+- Small projects that don't launch
+- One thing done many ways in different languages/tech
