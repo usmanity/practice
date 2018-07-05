@@ -1,22 +1,33 @@
-console.log('Starting app.js');
-
 const fs = require('fs');
 const _ = require('lodash');
+const yargs = require('yargs');
 
 const notes = require('./notes.js');
 
+const argv = yargs.argv;
 const command = process.argv[2];
 
-console.log(`command ${command}`);
-
 if (command === 'add') {
-    console.log('adding using notes.js');
+    var note = notes.addNote(argv.title, argv.body);
+    if (note) {
+        console.log("Note created");
+        console.log(`Title: ${note.title}`);
+        console.log(`Body: ${note.body}`);
+    } else {
+        console.log("Note already exists with this title");
+    }
+    
 } else if (command === 'list') {
-    console.log('listing notes');
+    notes.getAll();
 } else if (command === 'remove') {
-    console.log('removing notes');
+    var noteRemoved = notes.removeNote(argv.title);
+    var message = noteRemoved ? 'Note was removed' : `Note with '${argv.title}' not found`;
+    console.log(message);
 } else if (command === 'read') {
-    console.log('opening up a note for you');
+    var note = notes.readNote(argv.title);
+    console.log(`Trying to open "${argv.title}"\n----`);
+    console.log(`Note title: ${note.title}`);
+    console.log(`Note body: ${note.body}`);
 } else {
     console.log(command);
 }
