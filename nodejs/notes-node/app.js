@@ -4,7 +4,44 @@ const yargs = require('yargs');
 
 const notes = require('./notes.js');
 
-const argv = yargs.argv;
+const titleObj = {
+    describe: 'Title of note',
+    demand: true,
+    alias: 't',
+};
+const bodyObj = {
+    describe: "The note's body content",
+    demand: true,
+    alias: 'b'
+};
+const argv = yargs.command(
+    'add',
+    'Add a new note to list of notes',
+    {
+        title: titleObj,
+        body: bodyObj
+    }
+)
+.command(
+    'list',
+    'List all notes'
+)
+.command(
+    'read',
+    'Read a note',
+    {
+        title: titleObj
+    }
+)
+.command(
+    'remove',
+    'Delete a note from all notes',
+    {
+        title: titleObj
+    }
+)
+.help()
+.argv;
 const command = process.argv[2];
 
 if (command === 'add') {
@@ -18,7 +55,11 @@ if (command === 'add') {
     }
     
 } else if (command === 'list') {
-    notes.getAll();
+    var allNotes = notes.getAll();
+    console.log(`Printing ${allNotes.length} note(s).`);
+    allNotes.forEach(note => {
+        console.log(`${note.title}: ${note.body}`);
+    });
 } else if (command === 'remove') {
     var noteRemoved = notes.removeNote(argv.title);
     var message = noteRemoved ? 'Note was removed' : `Note with '${argv.title}' not found`;
