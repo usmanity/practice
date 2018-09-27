@@ -23,6 +23,7 @@ app.use((req, res, next) => {
     //     title: 'Maintenance mode',
     //     message: `We'll be back soon!`
     // });
+    next();
 });
 
 app.get('/', (req, res) => {
@@ -44,7 +45,14 @@ app.get('/bad', (req, res) => {
     res.send({
         error: 'Error handling request'
     })
-})
+});
+
+app.get('/projects', (req, res) => {
+    res.render('projects', {
+        title: 'Projects',
+        year: new Date().getFullYear()
+    });
+});
 
 app.listen(port, () => {
     console.log(`Server is up on port ${port}`);
