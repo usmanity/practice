@@ -6,3 +6,14 @@ module.exports.setName = (user, name) => {
     user.lastName = names[1];
     return user;
 }
+module.exports.asyncAdd = (a, b, callback) => {
+    setTimeout(() => {
+        callback(a + b);
+    }, 10);
+}
+
+module.exports.asyncSquare = (x, callback) => {
+    setTimeout(() => {
+        callback(x * x);
+    }, 10);
+}
