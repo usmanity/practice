@@ -29,8 +29,20 @@ app.get('/todos', (req, res) => {
     }, e => res.send(e));
 });
 
-app.listen(3000, () => {
-    console.log('App is running on port 3000');
+app.get('/todos/:id', (req, res) => {
+    var id = req.params.id;
+    Todo.findById(id).then((todo) => {
+        console.log(todo);
+        res.send(todo);
+    }, (err) => {
+        res.status(404).send('ID not found');
+    });
+});
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+    console.log(`App is running on port ${port}`);
 });
 
 module.exports = { app };

@@ -1,3 +1,4 @@
+const { ObjectID } = require('mongodb');
 const request = require('supertest');
 const expect = require('expect');
 
@@ -5,6 +6,7 @@ const { app } = require('./../server');
 const { Todo } = require('./../models/todos');
 
 const todos = [{
+    _id: new ObjectID(),
     text: 'Number 1 task'
 }, {
     text: 'Second test todo'
@@ -64,4 +66,16 @@ describe('GET /todos', () => {
             })
             .end(done);
     })
-})
+});
+
+describe('GET /todos/:id', () => {
+    it('should return a single todo doc', (done) => {
+        var testId = todos[0]._id;
+        request(app)
+            .get(`/todos/${testId}`)
+            .expect(200)
+            .end(done);
+    });
+
+    
+});
