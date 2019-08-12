@@ -1,3 +1,5 @@
+#!/usr/local/bin/python
+
 def fib1(n):
     if n == 1 or n == 2:
         return 1
