@@ -6,6 +6,8 @@ wordlist = ['APPLE', 'PLEAS', 'PLEASE']
 puzzles = []
 puzzles = ['AELWXYZ', 'AELPXYZ', 'AELPSXY', 'SAELPXY', 'XAELPSY']
 
+# return [1, 2, 0, 0, 1]
+
 for i in range(2500000):
     puzzles.append(''.join(random.choice(string.ascii_uppercase) for _ in range(7)))
 retlist = []

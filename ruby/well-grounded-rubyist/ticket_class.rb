@@ -1,3 +1,3 @@
 class Ticket
-    attr_reader :venue, :date, :price
+    attr_accessor :venue, :date, :price
 end
